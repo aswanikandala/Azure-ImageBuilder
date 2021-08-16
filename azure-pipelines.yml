@@ -18,12 +18,12 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: AzureCLI@2
+
+- task: AzurePowerShell@5
   inputs:
-    azureSubscription: 'ASR Canary Test Subscription 3(7c943c1b-5122-4097-90c8-861411bdd574)'
-    scriptType: 'ps'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
+    azureSubscription: 'ER: CE Security Service Operation Center(7d411d23-59e5-4e2e-8566-4f59de4544f2)'
+    ScriptType: 'InlineScript'
+    Inline: |
       az provider register -n Microsoft.VirtualMachineImages
       az provider register -n Microsoft.Compute
       az provider register -n Microsoft.KeyVault
