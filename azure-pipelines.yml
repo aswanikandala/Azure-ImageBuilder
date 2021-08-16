@@ -19,11 +19,10 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: AzurePowerShell@5
+- task: PowerShell@2
   inputs:
-    azureSubscription: 'ER: CE Security Service Operation Center(7d411d23-59e5-4e2e-8566-4f59de4544f2)'
-    ScriptType: 'InlineScript'
-    Inline: |
+    targetType: 'inline'
+    script: |
       az provider register -n Microsoft.VirtualMachineImages
       az provider register -n Microsoft.Compute
       az provider register -n Microsoft.KeyVault
