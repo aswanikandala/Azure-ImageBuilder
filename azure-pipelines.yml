@@ -23,9 +23,6 @@ steps:
   inputs:
     azureSubscription: 'AvevaTest'
     ScriptType: 'InlineScript'
+    azurePowerShellVersion: LatestVersion
     Inline: |
-      az provider register -n Microsoft.VirtualMachineImages
-      az provider register -n Microsoft.Compute
-      az provider register -n Microsoft.KeyVault
-      az provider register -n Microsoft.Storage
-      az provider register -n Microsoft.Network
+      az --version
