@@ -19,10 +19,11 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: PowerShell@2
+- task: AzurePowerShell@5
   inputs:
-    targetType: 'inline'
-    script: |
+    azureSubscription: 'AvevaTest'
+    ScriptType: 'InlineScript'
+    Inline: |
       az provider register -n Microsoft.VirtualMachineImages
       az provider register -n Microsoft.Compute
       az provider register -n Microsoft.KeyVault
