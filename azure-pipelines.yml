@@ -20,9 +20,21 @@ steps:
   displayName: 'Run a multi-line script'
 
 
-- task: AzureCLI@2
+#- task: AzureCLI@2
+#  inputs:
+#    azureSubscription: 'AvevaTest'
+#    scriptType: 'bash'
+#    scriptLocation: 'scriptPath'
+#    scriptPath: 'imagebuild.sh'
+    
+
+- task: AzureImageBuilderTask@1
   inputs:
-    azureSubscription: 'AvevaTest'
-    scriptType: 'bash'
-    scriptLocation: 'scriptPath'
-    scriptPath: 'imagebuild.sh'
+    managedIdentity: 'aibBuiUserId1629195141'
+    imageSource: 'marketplace'
+    baseImage: 'MicrosoftWindowsServer:WindowsServer:2016-Datacenter'
+    provisioner: 'powershell'
+    distributeType: 'sig'
+    ibSubscription: 'AvevaTest'
+    ibAzureResourceGroup: 'sample-res-grp'
+    ibLocation: 'westus'
