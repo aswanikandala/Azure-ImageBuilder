@@ -35,7 +35,7 @@ steps:
     baseImage: 'MicrosoftWindowsServer:WindowsServer:2016-Datacenter'
     provisioner: 'powershell'
     storageAccountName: 'storageaccountappse998e'
-    imageIdForDistribute: 'mycustomimage-managed'
+    imageIdForDistribute: 'mycustomimagemanaged'
     managedImageLocation: 'East US'
     ibSubscription: 'AvevaTest'
     ibAzureResourceGroup: 'sample-res-grp'
