@@ -30,7 +30,7 @@ steps:
 
 - task: AzureImageBuilderTask@1
   inputs:
-    managedIdentity: 'aibBuiUserId1629195141'
+    managedIdentity: '/subscriptions/6dfd2d67-7df5-4127-80af-53303bce829c/resourceGroups/sample-res-grp/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aibBuiUserId1629195141'
     imageSource: 'marketplace'
     baseImage: 'MicrosoftWindowsServer:WindowsServer:2016-Datacenter'
     provisioner: 'powershell'
